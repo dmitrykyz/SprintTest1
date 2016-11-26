@@ -12,7 +12,7 @@ public class MainLoader {
 
 
         ApplicationContext context = new ClassPathXmlApplicationContext("beans-services.xml");
-        SenderService senderService = (SenderService) context.getBean("sender");
+        SenderService senderService = (SenderService) context.getBean("senderService");
         senderService.sendMessage();
     }
 }

@@ -8,13 +8,13 @@ http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-    <bean id="sender" class="by.pvt.testspring.SenderService">
+    <bean id="senderService" class="by.pvt.testspring.SenderService">
         <property name="sender" ref="emailSender"/>
     </bean>
 
     <bean id="emailSender" class="by.pvt.testspring.EmailSender"/>
 
-    <bean id="notifier" class="by.pvt.testspring.Notifier"/>
+
 
         <aop:config>
             <aop:aspect id="node" ref="notifier">
@@ -23,6 +23,8 @@ http://www.springframework.org/schema/aop/spring-aop.xsd">
                 <aop:after pointcut-ref="sendTemp" method="notifyAfter"/>
             </aop:aspect>
         </aop:config>
+
+    <bean id="notifier" class="by.pvt.testspring.Notifier"/>
 
 
 </beans>
